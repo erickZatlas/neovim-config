@@ -28,6 +28,7 @@ This configuration uses [lazy.nvim](https://github.com/folke/lazy.nvim) for plug
 |--------|---------|---------------|
 | [telescope.nvim](telescope.md) | Fuzzy finder | [Telescope](telescope.md) |
 | [neo-tree.nvim](../keybindings.md) | File explorer | - |
+| [bufferline.nvim](ui.md) | Buffer tabs | [UI](ui.md) |
 
 ### Development Tools
 

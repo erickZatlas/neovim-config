@@ -9,7 +9,7 @@ related:
 
 # UI Enhancements
 
-Files: `lua/plugins/colorscheme.lua`, `lua/plugins/lualine.lua`, `lua/plugins/ui.lua`, `lua/plugins/which-key.lua`, `lua/plugins/alpha.lua`
+Files: `lua/plugins/colorscheme.lua`, `lua/plugins/lualine.lua`, `lua/plugins/bufferline.lua`, `lua/plugins/ui.lua`, `lua/plugins/which-key.lua`, `lua/plugins/alpha.lua`
 
 ## Color Scheme
 
@@ -73,6 +73,52 @@ opts = {
 | Insert | INSERT |
 | Visual | VISUAL |
 | Command | COMMAND |
+
+---
+
+## Buffer Line
+
+**Plugin:** `bufferline.nvim`
+
+### Appearance
+
+Displays open buffers as tabs at the top of the screen:
+
+```
+┌──────────┬──────────┬──────────┬─────────────────────────────┐
+│ 📌 app.kt │  main.kt │ utils.kt │                             │
+└──────────┴──────────┴──────────┴─────────────────────────────┘
+```
+
+### Features
+
+- Visual buffer tabs with file icons
+- LSP diagnostic indicators on tabs
+- Pin buffers to keep them visible
+- Integrates with Neo-tree sidebar
+
+### Keybindings
+
+| Key | Action |
+|-----|--------|
+| `<S-h>` | Previous buffer |
+| `<S-l>` | Next buffer |
+| `<leader>bp` | Pin/unpin buffer |
+| `<leader>bx` | Close all other buffers |
+
+### Customization
+
+```lua
+-- lua/plugins/bufferline.lua
+opts = {
+  options = {
+    mode = "buffers",           -- "buffers" or "tabs"
+    diagnostics = "nvim_lsp",   -- Show LSP diagnostics
+    show_buffer_close_icons = true,
+    separator_style = "thin",   -- "slant", "thick", "thin"
+  },
+},
+```
 
 ---
 

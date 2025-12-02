@@ -32,6 +32,11 @@ Leader key: `<Space>`
 |-----|------|--------|
 | `<S-h>` | Normal | Previous buffer |
 | `<S-l>` | Normal | Next buffer |
+| `<leader>bp` | Normal | Pin/unpin buffer |
+| `<leader>bx` | Normal | Close all other buffers |
+| `<leader>fb` | Normal | List buffers (Telescope) |
+
+Buffers are displayed as tabs at the top of the screen via bufferline.nvim. Pinned buffers stay visible on the left.
 
 ### Visual Mode
 
@@ -181,13 +186,14 @@ Leader key: `<Space>`
 
 | Prefix | Category |
 |--------|----------|
-| `<leader>f` | Find (Telescope) |
+| `<leader>b` | Buffer |
+| `<leader>c` | Code |
 | `<leader>d` | Debug |
+| `<leader>f` | Find (Telescope) |
+| `<leader>g` | Git |
 | `<leader>h` | Git Hunks |
 | `<leader>t` | Toggle |
 | `<leader>x` | Diagnostics |
-| `<leader>c` | Code |
-| `<leader>g` | Git |
 
 Press `<leader>` and wait for which-key to show all options.
 
