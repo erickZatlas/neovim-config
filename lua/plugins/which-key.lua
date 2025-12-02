@@ -37,6 +37,7 @@ return {
         { "<leader>c", group = "Code" },
         { "<leader>x", group = "Diagnostics" },
         { "<leader>t", group = "Toggle" },
+        { "<leader>d", group = "Debug" },
       },
     },
   },
