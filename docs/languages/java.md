@@ -5,7 +5,7 @@ category: "languages"
 related:
   - README.md
   - kotlin.md
-  - ../plugins/debugging.md
+  - ../plugins/dap.md
 ---
 
 # Java
@@ -74,7 +74,7 @@ end,
 Runs automatically on save. Format manually:
 
 ```
-<leader>f
+<leader>cf
 ```
 
 ### Style
@@ -138,7 +138,7 @@ mvn exec:java -Dexec.mainClass="com.example.Main" \
 | `<leader>dO` | Step out |
 | `<leader>du` | Toggle debug UI |
 
-See [Debugging](../plugins/debugging.md) for full details.
+See [Debugging](../plugins/dap.md) for full details.
 
 ## Useful Keybindings
 
@@ -148,10 +148,10 @@ See [Debugging](../plugins/debugging.md) for full details.
 | `gr` | Find references |
 | `gi` | Go to implementation |
 | `K` | Hover documentation |
-| `<leader>rn` | Rename |
+| `<leader>cr` | Rename |
 | `<leader>ca` | Code actions |
-| `<leader>oi` | Organize imports |
-| `<leader>f` | Format |
+| `<leader>co` | Organize imports |
+| `<leader>cf` | Format |
 
 ## Build Tool Integration
 
@@ -214,7 +214,7 @@ JDTLS can be slow on first load for large projects. It builds an index that spee
 
 ### Import Errors
 
-1. Run organize imports: `<leader>oi`
+1. Run organize imports: `<leader>co`
 2. Check dependencies in build file
 3. Rebuild project
 
@@ -238,5 +238,5 @@ For more control, consider using `nvim-jdtls` plugin instead of basic lspconfig 
 ## Related
 
 - [Kotlin](kotlin.md) - Similar JVM setup
-- [Debugging](../plugins/debugging.md) - Full debug documentation
+- [Debugging](../plugins/dap.md) - Full debug documentation
 - [LSP](../plugins/lsp.md) - LSP configuration details

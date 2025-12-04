@@ -155,5 +155,5 @@ Install a Nerd Font and configure your terminal to use it.
 ## Related
 
 - [Architecture](architecture.md) - Understanding the configuration structure
-- [Keybindings](keybindings.md) - Complete keybinding reference
+- [Keybindings](reference/keybindings.md) - Complete keybinding reference
 - [Plugin Overview](plugins/README.md) - All installed plugins

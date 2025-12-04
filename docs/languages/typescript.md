@@ -104,7 +104,7 @@ Runs automatically on save for:
 
 Format manually:
 ```
-<leader>f
+<leader>cf
 ```
 
 ### Configuration
@@ -141,7 +141,7 @@ Or in `package.json`:
 - File save
 - Leaving insert mode
 
-Trigger manually: `<leader>l`
+Trigger manually: `<leader>cl`
 
 ### Configuration
 
@@ -179,11 +179,11 @@ Or for flat config (ESLint 9+), create `eslint.config.js`.
 | `gr` | Find references |
 | `gi` | Go to implementation |
 | `K` | Hover documentation |
-| `<leader>rn` | Rename |
+| `<leader>cr` | Rename |
 | `<leader>ca` | Code actions |
-| `<leader>oi` | Organize imports |
-| `<leader>f` | Format (Prettier) |
-| `<leader>l` | Lint (ESLint) |
+| `<leader>co` | Organize imports |
+| `<leader>cf` | Format (Prettier) |
+| `<leader>cl` | Lint (ESLint) |
 
 ## Code Actions
 

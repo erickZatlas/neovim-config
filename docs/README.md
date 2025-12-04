@@ -6,56 +6,77 @@ category: "core"
 
 # Neovim Configuration
 
-A modular, feature-rich Neovim configuration for **Kotlin**, **Java**, **Python**, **JavaScript**, and **TypeScript** development.
+A modular Neovim configuration for **Kotlin**, **Java**, **Python**, **JavaScript**, and **TypeScript** development.
+
+## What do you want to do?
+
+| Task | Guide |
+|------|-------|
+| Move between windows, buffers, jump to definitions | [Navigation](tasks/navigation.md) |
+| Comment code, use surround, completion | [Editing](tasks/editing.md) |
+| Rename, format, lint, see diagnostics | [Code Intelligence](tasks/code-intelligence.md) |
+| Find files, grep, search symbols | [Searching](tasks/searching.md) |
+| Stage hunks, blame, diff | [Git](tasks/git.md) |
+| Set breakpoints, step through code | [Debugging](tasks/debugging.md) |
+
+See [Task Guide](tasks/README.md) for quick reference.
+
+## Quick Start
+
+| Key | Action |
+|-----|--------|
+| `<leader>ff` | Find files |
+| `<leader>fg` | Search in files |
+| `gd` | Go to definition |
+| `<leader>cr` | Rename symbol |
+| `<leader>cf` | Format code |
+| `gcc` | Toggle comment |
+| `<leader>db` | Toggle breakpoint |
+
+Leader key: `<Space>`
 
 ## Features
 
-- **LSP Integration** - Auto-installed language servers with Mason
-- **Smart Completion** - Context-aware autocompletion with snippets
-- **Debugging** - Full DAP support for JVM debugging
-- **Git Integration** - Hunk staging, blame, and diff viewing
-- **Fuzzy Finding** - Telescope with ripgrep and FZF
-- **Format on Save** - Consistent code style across languages
-- **Modern UI** - Tokyo Night theme, statusline, indent guides
+- **LSP** - Auto-installed language servers via Mason
+- **Completion** - Context-aware with snippets
+- **Debugging** - DAP for JVM debugging
+- **Git** - Hunk staging, blame, diff
+- **Telescope** - Fuzzy finding with ripgrep
+- **Format on Save** - Consistent code style
+- **Tokyo Night** - Modern UI with statusline
 
-## Quick Navigation
+## Documentation
 
 ### Getting Started
 
 - [Installation & Setup](getting-started.md)
-- [Architecture Overview](architecture.md)
-- [Keybinding Reference](keybindings.md)
+- [Architecture](architecture.md)
+- [Keybinding Reference](reference/keybindings.md)
 
-### Plugins
+### Task Guides
+
+- [Navigation](tasks/navigation.md) - Windows, buffers, code jumps
+- [Editing](tasks/editing.md) - Comments, surround, completion
+- [Code Intelligence](tasks/code-intelligence.md) - LSP, formatting, diagnostics
+- [Searching](tasks/searching.md) - Files, grep, symbols
+- [Git](tasks/git.md) - Staging, blame, diff
+- [Debugging](tasks/debugging.md) - Breakpoints, stepping
+
+### Plugin Configuration
 
 - [Plugin Overview](plugins/README.md)
 - [LSP & Mason](plugins/lsp.md)
 - [Completion](plugins/completion.md)
 - [Telescope](plugins/telescope.md)
-- [Debugging](plugins/debugging.md)
-- [Git Integration](plugins/git.md)
-- [Editor Utilities](plugins/editor.md)
+- [DAP Debugging](plugins/dap.md)
+- [Gitsigns](plugins/gitsigns.md)
 - [UI Enhancements](plugins/ui.md)
 
 ### Language Support
 
 - [Language Overview](languages/README.md)
-- [Kotlin](languages/kotlin.md)
-- [Java](languages/java.md)
-- [Python](languages/python.md)
-- [TypeScript/JavaScript](languages/typescript.md)
-
-## Key Bindings at a Glance
-
-| Prefix | Category |
-|--------|----------|
-| `<leader>f` | Find (Telescope) |
-| `<leader>d` | Debug |
-| `<leader>h` | Git hunks |
-| `<leader>x` | Diagnostics |
-| `g` | Go to (LSP navigation) |
-
-See [Keybinding Reference](keybindings.md) for the complete list.
+- [Kotlin](languages/kotlin.md) | [Java](languages/java.md)
+- [Python](languages/python.md) | [TypeScript](languages/typescript.md)
 
 ## Project Structure
 
@@ -67,10 +88,5 @@ See [Keybinding Reference](keybindings.md) for the complete list.
 │   │   ├── options.lua   # Editor settings
 │   │   └── keymaps.lua   # Global keybindings
 │   └── plugins/          # Plugin configurations
-└── docs/                 # This documentation
+└── docs/                 # Documentation
 ```
-
-## Related
-
-- [Getting Started](getting-started.md)
-- [Architecture](architecture.md)

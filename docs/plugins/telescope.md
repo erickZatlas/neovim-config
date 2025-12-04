@@ -171,5 +171,6 @@ Rebuild the extension:
 
 ## Related
 
+- [Searching Guide](../tasks/searching.md) - Usage guide
 - [LSP](lsp.md) - Symbol search integration
-- [Keybindings](../keybindings.md) - Full keybinding reference
+- [Keybindings](../reference/keybindings.md) - Full keybinding reference

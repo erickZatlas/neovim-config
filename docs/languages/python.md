@@ -67,7 +67,7 @@ The uncompromising Python formatter. Runs on save.
 
 Format manually:
 ```
-<leader>f
+<leader>cf
 ```
 
 ### Configuration
@@ -90,7 +90,7 @@ An extremely fast Python linter. Runs on:
 - File save
 - Leaving insert mode
 
-Trigger manually: `<leader>l`
+Trigger manually: `<leader>cl`
 
 ### Configuration
 
@@ -152,10 +152,10 @@ venv = ".venv"
 | `gd` | Go to definition |
 | `gr` | Find references |
 | `K` | Hover documentation |
-| `<leader>rn` | Rename |
+| `<leader>cr` | Rename |
 | `<leader>ca` | Code actions |
-| `<leader>f` | Format (Black) |
-| `<leader>l` | Lint (Ruff) |
+| `<leader>cf` | Format (Black) |
+| `<leader>cl` | Lint (Ruff) |
 
 ## Project Setup
 

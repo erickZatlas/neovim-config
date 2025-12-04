@@ -39,13 +39,13 @@ This configuration provides full IDE-like support for multiple languages.
 - **Find references** (`gr`)
 - **Hover documentation** (`K`)
 - **Code actions** (`<leader>ca`)
-- **Rename symbol** (`<leader>rn`)
+- **Rename symbol** (`<leader>cr`)
 - **Format on save**
 
 ### JVM Languages (Kotlin, Java)
 
 - **Debugging** with DAP
-- **Organize imports** (`<leader>oi`)
+- **Organize imports** (`<leader>co`)
 - **Build integration** (Gradle/Maven)
 
 ### Web Languages (TypeScript, JavaScript)
@@ -154,7 +154,7 @@ When creating a new file without an extension, Neovim won't automatically detect
 
 ### Format and Validate
 
-Once filetype is set, use `<leader>cf` to format and validate the file. Invalid syntax will show an error.
+Once filetype is set, use `<leader>cf` to format. Invalid syntax will show an error.
 
 ## Troubleshooting
 

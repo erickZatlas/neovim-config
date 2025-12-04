@@ -17,6 +17,13 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
+-- Buffer management
+keymap("n", "<leader>ba", ":enew<CR>", { noremap = true, silent = true, desc = "New buffer" })
+keymap("n", "<leader>bc", ":bdelete<CR>", { noremap = true, silent = true, desc = "Close buffer" })
+keymap("n", "bn", ":bnext<CR>", { noremap = true, silent = true, desc = "Next buffer" })
+keymap("n", "bp", ":bprevious<CR>", { noremap = true, silent = true, desc = "Prev buffer" })
+keymap("n", "bc", ":bdelete<CR>", { noremap = true, silent = true, desc = "Close buffer" })
+
 -- Stay in indent mode (visual)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
