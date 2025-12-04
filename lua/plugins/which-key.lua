@@ -7,12 +7,24 @@ return {
       vim.o.timeoutlen = 300
     end,
     opts = {
+      -- Only show which-key for leader key
+      triggers = {
+        { "<leader>", mode = { "n", "v" } },
+      },
       plugins = {
-        marks = true,
-        registers = true,
+        marks = false,
+        registers = false,
         spelling = {
-          enabled = true,
-          suggestions = 20,
+          enabled = false,
+        },
+        presets = {
+          operators = false,
+          motions = false,
+          text_objects = false,
+          windows = false,
+          nav = false,
+          z = false,
+          g = false,
         },
       },
       icons = {
@@ -31,13 +43,15 @@ return {
         align = "center",
       },
       spec = {
-        { "<leader>f", group = "Find" },
-        { "<leader>g", group = "Git" },
-        { "<leader>h", group = "Git Hunk" },
+        { "<leader>b", group = "Buffer" },
         { "<leader>c", group = "Code" },
-        { "<leader>x", group = "Diagnostics" },
-        { "<leader>t", group = "Toggle" },
         { "<leader>d", group = "Debug" },
+        { "<leader>f", group = "Find" },
+        { "<leader>g", proxy = "g", group = "Go to" },
+        { "<leader>G", group = "Git" },
+        { "<leader>h", group = "Git Hunk" },
+        { "<leader>t", group = "Toggle" },
+        { "<leader>x", group = "Diagnostics" },
       },
     },
   },

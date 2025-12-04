@@ -49,6 +49,10 @@ Buffers are displayed as tabs at the top of the screen via bufferline.nvim. Pinn
 
 ## LSP
 
+LSP keybindings only appear when a language server is attached (check `:LspInfo`).
+
+### Navigation (g prefix)
+
 | Key | Mode | Action |
 |-----|------|--------|
 | `gd` | Normal | Go to definition |
@@ -57,14 +61,28 @@ Buffers are displayed as tabs at the top of the screen via bufferline.nvim. Pinn
 | `gi` | Normal | Go to implementation |
 | `K` | Normal | Hover documentation |
 | `<C-k>` | Normal | Signature help |
-| `<leader>rn` | Normal | Rename symbol |
-| `<leader>ca` | Normal | Code action |
-| `<leader>D` | Normal | Type definition |
-| `<leader>oi` | Normal | Organize imports |
 | `[d` | Normal | Previous diagnostic |
 | `]d` | Normal | Next diagnostic |
-| `<leader>d` | Normal | Show diagnostic float |
-| `<leader>q` | Normal | Set location list |
+
+### Jump History
+
+| Key | Mode | Action |
+|-----|------|--------|
+| `<C-o>` | Normal | Jump back (previous location) |
+| `<C-i>` | Normal | Jump forward (next location) |
+
+Use `<C-o>` to return after jumping with `gd`, `gr`, or `gi`.
+
+### Code Actions (leader c)
+
+| Key | Mode | Action |
+|-----|------|--------|
+| `<leader>ca` | Normal | Code action |
+| `<leader>cr` | Normal | Rename symbol |
+| `<leader>cd` | Normal | Type definition |
+| `<leader>co` | Normal | Organize imports |
+| `<leader>cf` | Normal | Format buffer |
+| `<leader>cl` | Normal | Lint buffer |
 
 ## Telescope (Find)
 
@@ -132,17 +150,12 @@ Buffers are displayed as tabs at the top of the screen via bufferline.nvim. Pinn
 | `<leader>e` | Normal | Toggle Neo-tree |
 | `<leader>o` | Normal | Focus Neo-tree |
 
-## Formatting & Linting
-
-| Key | Mode | Action |
-|-----|------|--------|
-| `<leader>f` | Normal | Format buffer |
-| `<leader>l` | Normal | Run linter |
-
 ## Diagnostics (Trouble)
 
 | Key | Mode | Action |
 |-----|------|--------|
+| `<leader>xf` | Normal | Show diagnostic float |
+| `<leader>xl` | Normal | Set location list |
 | `<leader>xx` | Normal | Toggle all diagnostics |
 | `<leader>xX` | Normal | Toggle buffer diagnostics |
 | `<leader>xs` | Normal | Toggle symbols |
@@ -190,7 +203,8 @@ Buffers are displayed as tabs at the top of the screen via bufferline.nvim. Pinn
 | `<leader>c` | Code |
 | `<leader>d` | Debug |
 | `<leader>f` | Find (Telescope) |
-| `<leader>g` | Git |
+| `<leader>g` | Go to (vim g commands) |
+| `<leader>G` | Git |
 | `<leader>h` | Git Hunks |
 | `<leader>t` | Toggle |
 | `<leader>x` | Diagnostics |
