@@ -9,7 +9,7 @@ related:
 
 # UI Enhancements
 
-Files: `lua/plugins/colorscheme.lua`, `lua/plugins/lualine.lua`, `lua/plugins/bufferline.lua`, `lua/plugins/ui.lua`, `lua/plugins/which-key.lua`, `lua/plugins/alpha.lua`
+Files: `lua/plugins/colorscheme.lua`, `lua/plugins/lualine.lua`, `lua/plugins/bufferline.lua`, `lua/plugins/ui.lua`, `lua/plugins/which-key.lua`, `lua/plugins/alpha.lua`, `lua/config/options.lua`
 
 ## Color Scheme
 
@@ -315,9 +315,35 @@ keywords = {
 },
 ```
 
+---
+
+## Code Folding
+
+**File:** `lua/config/options.lua`
+
+### Configuration
+
+```lua
+vim.opt.foldmethod = "indent"    -- Fold based on indentation
+vim.opt.foldlevelstart = 99      -- Start with all folds open
+vim.opt.foldenable = true        -- Enable folding
+```
+
+### Key Commands
+
+| Key | Action |
+|-----|--------|
+| `zc` | Close fold |
+| `zo` | Open fold |
+| `zM` | Close all |
+| `zR` | Open all |
+
+See [Data Files Guide](../tasks/data-files.md) for detailed folding workflows.
+
 ## Related
 
 - [Navigation Guide](../tasks/navigation.md) - Buffer navigation
 - [Code Intelligence Guide](../tasks/code-intelligence.md) - Diagnostics
+- [Data Files Guide](../tasks/data-files.md) - JSON, XML, folding
 - [Keybindings](../reference/keybindings.md) - Full keybinding reference
 - [Getting Started](../getting-started.md) - Installation and setup

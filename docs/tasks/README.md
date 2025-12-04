@@ -28,6 +28,8 @@ Find documentation by what you want to accomplish.
 | View blame | `<leader>hb` | [Git](git.md) |
 | Set breakpoint | `<leader>db` | [Debugging](debugging.md) |
 | Start debugging | `<leader>dc` | [Debugging](debugging.md) |
+| Fold/collapse code | `zc` / `zM` | [Data Files](data-files.md) |
+| Format JSON/XML | `<leader>cf` | [Data Files](data-files.md) |
 
 ## Leader Key Groups
 
@@ -51,6 +53,7 @@ Press `<Space>` (leader) and wait for which-key to show options.
 - **[Searching](searching.md)** - Find files, grep, symbols
 - **[Git](git.md)** - Staging, hunks, blame, diff
 - **[Debugging](debugging.md)** - Breakpoints, stepping, evaluation
+- **[Data Files](data-files.md)** - JSON, XML, folding, formatting
 
 ## Other Resources
 

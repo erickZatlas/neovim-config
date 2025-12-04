@@ -18,6 +18,7 @@ A modular Neovim configuration for **Kotlin**, **Java**, **Python**, **JavaScrip
 | Find files, grep, search symbols | [Searching](tasks/searching.md) |
 | Stage hunks, blame, diff | [Git](tasks/git.md) |
 | Set breakpoints, step through code | [Debugging](tasks/debugging.md) |
+| Work with JSON/XML, fold code | [Data Files](tasks/data-files.md) |
 
 See [Task Guide](tasks/README.md) for quick reference.
 
@@ -61,6 +62,7 @@ Leader key: `<Space>`
 - [Searching](tasks/searching.md) - Files, grep, symbols
 - [Git](tasks/git.md) - Staging, blame, diff
 - [Debugging](tasks/debugging.md) - Breakpoints, stepping
+- [Data Files](tasks/data-files.md) - JSON, XML, folding
 
 ### Plugin Configuration
 

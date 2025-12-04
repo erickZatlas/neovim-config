@@ -294,6 +294,23 @@ See [Debugging Guide](../tasks/debugging.md) for details.
 | `<leader>de` | Normal/Visual | Evaluate expression |
 | `<leader>dR` | Normal | Toggle REPL |
 
+## Folding
+
+See [Data Files Guide](../tasks/data-files.md) for details.
+
+### Fold Commands
+
+| Key | Mode | Action |
+|-----|------|--------|
+| `zc` | Normal | Close fold at cursor |
+| `zo` | Normal | Open fold at cursor |
+| `za` | Normal | Toggle fold at cursor |
+| `zM` | Normal | Close ALL folds |
+| `zR` | Normal | Open ALL folds |
+| `zx` | Normal | Reset/recalculate folds |
+| `zj` | Normal | Move to next fold |
+| `zk` | Normal | Move to previous fold |
+
 ## Leader Key Groups
 
 | Prefix | Category |
