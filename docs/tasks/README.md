@@ -54,6 +54,6 @@ Press `<Space>` (leader) and wait for which-key to show options.
 
 ## Other Resources
 
-- [Complete Keybinding Reference](../reference/keybindings.md)
+- [Complete Keybinding Reference](../reference/)
 - [Getting Started](../getting-started.md)
 - [Architecture](../architecture.md)

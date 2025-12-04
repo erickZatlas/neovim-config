@@ -51,7 +51,7 @@ Leader key: `<Space>`
 
 - [Installation & Setup](getting-started.md)
 - [Architecture](architecture.md)
-- [Keybinding Reference](reference/keybindings.md)
+- [Keybinding Reference](reference/)
 
 ### Task Guides
 

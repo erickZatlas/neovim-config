@@ -4,7 +4,7 @@ description: "Theme, statusline, indent guides, TODO comments, and more"
 category: "plugins"
 related:
   - README.md
-  - ../reference/keybindings.md
+  - ../reference/
 ---
 
 # UI Enhancements
@@ -319,5 +319,5 @@ keywords = {
 
 - [Navigation Guide](../tasks/navigation.md) - Buffer navigation
 - [Code Intelligence Guide](../tasks/code-intelligence.md) - Diagnostics
-- [Keybindings](../reference/keybindings.md) - Full keybinding reference
+- [Keybindings](../reference/) - Full keybinding reference
 - [Getting Started](../getting-started.md) - Installation and setup

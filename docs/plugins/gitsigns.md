@@ -4,7 +4,7 @@ description: "Git signs, hunks, blame, and diffs with gitsigns.nvim"
 category: "plugins"
 related:
   - README.md
-  - ../reference/keybindings.md
+  - ../reference/
 ---
 
 # Git Integration
@@ -180,5 +180,5 @@ Gitsigns watches the git directory with a 1000ms interval. For very large repos,
 ## Related
 
 - [Git Guide](../tasks/git.md) - Usage guide
-- [Keybindings](../reference/keybindings.md) - Full keybinding reference
+- [Keybindings](../reference/) - Full keybinding reference
 - [UI Enhancements](ui.md) - Status line integration
