@@ -6,7 +6,7 @@ return {
     cmd = { "ConformInfo" },
     keys = {
       {
-        "<leader>f",
+        "<leader>cf",
         function()
           require("conform").format({ async = true, lsp_fallback = true })
         end,
@@ -24,6 +24,7 @@ return {
         javascriptreact = { "prettier" },
         typescriptreact = { "prettier" },
         json = { "prettier" },
+        xml = { "xmllint" },
         css = { "prettier" },
         html = { "prettier" },
       },
@@ -38,6 +39,15 @@ return {
   {
     "mfussenegger/nvim-lint",
     event = { "BufReadPre", "BufNewFile" },
+    keys = {
+      {
+        "<leader>cl",
+        function()
+          require("lint").try_lint()
+        end,
+        desc = "Lint buffer",
+      },
+    },
     config = function()
       local lint = require("lint")
 
@@ -59,11 +69,6 @@ return {
           lint.try_lint()
         end,
       })
-
-      -- Keymap to trigger linting manually
-      vim.keymap.set("n", "<leader>l", function()
-        lint.try_lint()
-      end, { desc = "Trigger linting for current file" })
     end,
   },
 }

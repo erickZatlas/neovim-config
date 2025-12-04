@@ -50,34 +50,9 @@ return {
         cmp_nvim_lsp.default_capabilities()
       )
 
-      -- On attach function for keymaps
+      -- On attach function (for non-keymap setup if needed)
       local on_attach = function(client, bufnr)
-        local opts = { buffer = bufnr, noremap = true, silent = true }
-
-        -- Vim-style LSP keymaps
-        vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-        vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-        vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-        vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-        vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-        vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
-        vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-        vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-        vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, opts)
-
-        -- Diagnostics
-        vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
-        vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
-        vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
-        vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, opts)
-
-        -- Organize imports
-        vim.keymap.set("n", "<leader>oi", function()
-          vim.lsp.buf.code_action({
-            context = { only = { "source.organizeImports" } },
-            apply = true,
-          })
-        end, { buffer = bufnr, desc = "Organize imports" })
+        -- Keymaps are set via LspAttach autocmd below
       end
 
       -- Setup mason-lspconfig with handlers (compatible with Neovim 0.10)
@@ -166,6 +141,42 @@ return {
             })
           end,
         },
+      })
+
+      -- LSP keymaps via LspAttach (guaranteed to run after client attaches)
+      vim.api.nvim_create_autocmd("LspAttach", {
+        group = vim.api.nvim_create_augroup("lsp_keymaps", { clear = true }),
+        callback = function(args)
+          local bufnr = args.buf
+          local function map(keys, func, desc)
+            vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
+          end
+
+          -- Navigation
+          map("gd", vim.lsp.buf.definition, "Go to definition")
+          map("gD", vim.lsp.buf.declaration, "Go to declaration")
+          map("gr", vim.lsp.buf.references, "Go to references")
+          map("gi", vim.lsp.buf.implementation, "Go to implementation")
+          map("K", vim.lsp.buf.hover, "Hover documentation")
+          map("<C-k>", vim.lsp.buf.signature_help, "Signature help")
+
+          -- Code actions
+          map("<leader>cr", vim.lsp.buf.rename, "Rename symbol")
+          map("<leader>ca", vim.lsp.buf.code_action, "Code action")
+          map("<leader>cd", vim.lsp.buf.type_definition, "Type definition")
+          map("<leader>co", function()
+            vim.lsp.buf.code_action({
+              context = { only = { "source.organizeImports" } },
+              apply = true,
+            })
+          end, "Organize imports")
+
+          -- Diagnostics
+          map("[d", vim.diagnostic.goto_prev, "Previous diagnostic")
+          map("]d", vim.diagnostic.goto_next, "Next diagnostic")
+          map("<leader>xf", vim.diagnostic.open_float, "Show diagnostic")
+          map("<leader>xl", vim.diagnostic.setloclist, "Location list")
+        end,
       })
 
       -- Configure diagnostics display

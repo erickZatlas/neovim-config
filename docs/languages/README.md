@@ -21,6 +21,15 @@ This configuration provides full IDE-like support for multiple languages.
 | [TypeScript](typescript.md) | ts_ls | prettier | eslint_d | - |
 | [JavaScript](typescript.md) | ts_ls | prettier | eslint_d | - |
 
+### Data Formats
+
+| Format | Formatter | Syntax Highlighting |
+|--------|-----------|---------------------|
+| JSON | prettier | Treesitter |
+| XML | xmllint | Treesitter |
+| YAML | - | Treesitter |
+| TOML | - | Treesitter |
+
 ## Features Per Language
 
 ### All Languages
@@ -123,6 +132,30 @@ ensure_installed = {
 },
 ```
 
+## Working with New Files
+
+When creating a new file without an extension, Neovim won't automatically detect the filetype for syntax highlighting and formatting.
+
+### Set Filetype Manually
+
+```vim
+:set filetype=xml
+:set filetype=json
+```
+
+### Auto-Detection Methods
+
+**XML** - Add XML declaration at the top:
+```xml
+<?xml version="1.0"?>
+```
+
+**JSON** - Save with `.json` extension or set filetype manually.
+
+### Format and Validate
+
+Once filetype is set, use `<leader>cf` to format and validate the file. Invalid syntax will show an error.
+
 ## Troubleshooting
 
 ### LSP Not Starting
@@ -141,7 +174,7 @@ ensure_installed = {
 ### Linting Not Running
 
 1. Check linter is installed: `:Mason`
-2. Trigger manually: `<leader>l`
+2. Trigger manually: `<leader>cl`
 3. Check linter for filetype in config
 
 ## Related
