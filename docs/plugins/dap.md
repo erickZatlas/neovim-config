@@ -202,6 +202,7 @@ Remember Kotlin file `Main.kt` becomes class `MainKt`:
 
 ## Related
 
+- [Debugging Guide](../tasks/debugging.md) - Usage guide
 - [Kotlin](../languages/kotlin.md) - Kotlin-specific setup
 - [Java](../languages/java.md) - Java-specific setup
 - [LSP](lsp.md) - Language server integration

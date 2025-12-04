@@ -11,54 +11,56 @@ related:
 
 This configuration uses [lazy.nvim](https://github.com/folke/lazy.nvim) for plugin management with automatic lazy-loading.
 
+For usage guides, see [Task Guides](../tasks/README.md).
+
 ## Plugin Categories
 
 ### Core Functionality
 
-| Plugin | Purpose | Documentation |
+| Plugin | Purpose | Configuration |
 |--------|---------|---------------|
-| [nvim-lspconfig](lsp.md) | Language Server Protocol | [LSP](lsp.md) |
-| [mason.nvim](lsp.md) | LSP/tool package manager | [LSP](lsp.md) |
-| [nvim-cmp](completion.md) | Autocompletion | [Completion](completion.md) |
-| [nvim-treesitter](../architecture.md) | Syntax highlighting | - |
+| nvim-lspconfig | Language Server Protocol | [lsp.md](lsp.md) |
+| mason.nvim | LSP/tool installer | [lsp.md](lsp.md) |
+| nvim-cmp | Autocompletion | [completion.md](completion.md) |
+| nvim-treesitter | Syntax highlighting | [../architecture.md](../architecture.md) |
 
 ### Navigation & Search
 
-| Plugin | Purpose | Documentation |
+| Plugin | Purpose | Configuration |
 |--------|---------|---------------|
-| [telescope.nvim](telescope.md) | Fuzzy finder | [Telescope](telescope.md) |
-| [neo-tree.nvim](../keybindings.md) | File explorer | - |
-| [bufferline.nvim](ui.md) | Buffer tabs | [UI](ui.md) |
+| telescope.nvim | Fuzzy finder | [telescope.md](telescope.md) |
+| neo-tree.nvim | File explorer | - |
+| bufferline.nvim | Buffer tabs | [ui.md](ui.md) |
 
 ### Development Tools
 
-| Plugin | Purpose | Documentation |
+| Plugin | Purpose | Configuration |
 |--------|---------|---------------|
-| [nvim-dap](debugging.md) | Debugging | [Debugging](debugging.md) |
-| [conform.nvim](../languages/README.md) | Formatting | [Languages](../languages/README.md) |
-| [nvim-lint](../languages/README.md) | Linting | [Languages](../languages/README.md) |
-| [gitsigns.nvim](git.md) | Git integration | [Git](git.md) |
+| nvim-dap | Debugging | [dap.md](dap.md) |
+| conform.nvim | Formatting | [../languages/README.md](../languages/README.md) |
+| nvim-lint | Linting | [../languages/README.md](../languages/README.md) |
+| gitsigns.nvim | Git integration | [gitsigns.md](gitsigns.md) |
 
 ### Editing
 
-| Plugin | Purpose | Documentation |
-|--------|---------|---------------|
-| [nvim-autopairs](editor.md) | Auto-close brackets | [Editor](editor.md) |
-| [Comment.nvim](editor.md) | Toggle comments | [Editor](editor.md) |
-| [nvim-surround](editor.md) | Surround text objects | [Editor](editor.md) |
-| [vim-illuminate](editor.md) | Highlight word under cursor | [Editor](editor.md) |
+| Plugin | Purpose | Usage |
+|--------|---------|-------|
+| nvim-autopairs | Auto-close brackets | [tasks/editing.md](../tasks/editing.md) |
+| Comment.nvim | Toggle comments | [tasks/editing.md](../tasks/editing.md) |
+| nvim-surround | Surround text objects | [tasks/editing.md](../tasks/editing.md) |
+| vim-illuminate | Highlight references | [tasks/navigation.md](../tasks/navigation.md) |
 
 ### UI
 
-| Plugin | Purpose | Documentation |
+| Plugin | Purpose | Configuration |
 |--------|---------|---------------|
-| [tokyonight.nvim](ui.md) | Color scheme | [UI](ui.md) |
-| [lualine.nvim](ui.md) | Status line | [UI](ui.md) |
-| [indent-blankline.nvim](ui.md) | Indent guides | [UI](ui.md) |
-| [todo-comments.nvim](ui.md) | TODO highlighting | [UI](ui.md) |
-| [trouble.nvim](ui.md) | Diagnostics list | [UI](ui.md) |
-| [which-key.nvim](ui.md) | Keybinding hints | [UI](ui.md) |
-| [alpha-nvim](ui.md) | Dashboard | [UI](ui.md) |
+| tokyonight.nvim | Color scheme | [ui.md](ui.md) |
+| lualine.nvim | Status line | [ui.md](ui.md) |
+| indent-blankline.nvim | Indent guides | [ui.md](ui.md) |
+| todo-comments.nvim | TODO highlighting | [ui.md](ui.md) |
+| trouble.nvim | Diagnostics list | [ui.md](ui.md) |
+| which-key.nvim | Keybinding hints | [ui.md](ui.md) |
+| alpha-nvim | Dashboard | [ui.md](ui.md) |
 
 ## Plugin Management
 
@@ -107,6 +109,5 @@ See [Architecture](../architecture.md) for details on plugin specs.
 
 ## Related
 
+- [Task Guides](../tasks/README.md) - Usage documentation
 - [Architecture](../architecture.md) - Plugin system details
-- [LSP](lsp.md) - Language server setup
-- [Completion](completion.md) - Autocompletion

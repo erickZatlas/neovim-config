@@ -5,7 +5,7 @@ category: "languages"
 related:
   - README.md
   - java.md
-  - ../plugins/debugging.md
+  - ../plugins/dap.md
 ---
 
 # Kotlin
@@ -78,7 +78,7 @@ vim.opt.expandtab = true
 Runs automatically on save. Format manually:
 
 ```
-<leader>f
+<leader>cf
 ```
 
 ### Configuration
@@ -101,7 +101,7 @@ ktlint runs on:
 - File save
 - Leaving insert mode
 
-Trigger manually: `<leader>l`
+Trigger manually: `<leader>cl`
 
 ## Debugging
 
@@ -156,7 +156,7 @@ In package `com.example`:
 | `<leader>dO` | Step out |
 | `<leader>du` | Toggle debug UI |
 
-See [Debugging](../plugins/debugging.md) for full details.
+See [Debugging](../plugins/dap.md) for full details.
 
 ## Useful Keybindings
 
@@ -166,10 +166,10 @@ See [Debugging](../plugins/debugging.md) for full details.
 | `gr` | Find references |
 | `gi` | Go to implementation |
 | `K` | Hover documentation |
-| `<leader>rn` | Rename |
+| `<leader>cr` | Rename |
 | `<leader>ca` | Code actions |
-| `<leader>oi` | Organize imports |
-| `<leader>f` | Format |
+| `<leader>co` | Organize imports |
+| `<leader>cf` | Format |
 
 ## Gradle Integration
 
@@ -222,7 +222,7 @@ tasks.named<JavaExec>("run") {
 
 1. Ensure ktlint is installed: `:Mason`
 2. Check for `.editorconfig` conflicts
-3. Try manual format: `<leader>f`
+3. Try manual format: `<leader>cf`
 
 ### Debug Breakpoints Not Hitting
 
@@ -233,5 +233,5 @@ tasks.named<JavaExec>("run") {
 ## Related
 
 - [Java](java.md) - Similar JVM setup
-- [Debugging](../plugins/debugging.md) - Full debug documentation
+- [Debugging](../plugins/dap.md) - Full debug documentation
 - [LSP](../plugins/lsp.md) - LSP configuration details

@@ -4,7 +4,7 @@ description: "Theme, statusline, indent guides, TODO comments, and more"
 category: "plugins"
 related:
   - README.md
-  - ../keybindings.md
+  - ../reference/keybindings.md
 ---
 
 # UI Enhancements
@@ -101,9 +101,10 @@ Displays open buffers as tabs at the top of the screen:
 
 | Key | Action |
 |-----|--------|
-| `<S-h>` | Previous buffer |
-| `<S-l>` | Next buffer |
-| `<leader>bp` | Pin/unpin buffer |
+| `<S-h>` / `bp` | Previous buffer |
+| `<S-l>` / `bn` | Next buffer |
+| `bc` | Close buffer |
+| `<leader>bi` | Pin/unpin buffer |
 | `<leader>bx` | Close all other buffers |
 
 ### Customization
@@ -316,5 +317,7 @@ keywords = {
 
 ## Related
 
-- [Keybindings](../keybindings.md) - Full keybinding reference
+- [Navigation Guide](../tasks/navigation.md) - Buffer navigation
+- [Code Intelligence Guide](../tasks/code-intelligence.md) - Diagnostics
+- [Keybindings](../reference/keybindings.md) - Full keybinding reference
 - [Getting Started](../getting-started.md) - Installation and setup

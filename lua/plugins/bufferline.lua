@@ -16,7 +16,9 @@ return {
     keys = {
       { "<S-h>", "<cmd>BufferLineCyclePrev<cr>", desc = "Prev buffer" },
       { "<S-l>", "<cmd>BufferLineCycleNext<cr>", desc = "Next buffer" },
-      { "<leader>bp", "<cmd>BufferLineTogglePin<cr>", desc = "Pin buffer" },
+      { "<leader>bn", "<cmd>BufferLineCycleNext<cr>", desc = "Next buffer" },
+      { "<leader>bp", "<cmd>BufferLineCyclePrev<cr>", desc = "Prev buffer" },
+      { "<leader>bi", "<cmd>BufferLineTogglePin<cr>", desc = "Pin buffer" },
       { "<leader>bx", "<cmd>BufferLineCloseOthers<cr>", desc = "Close others" },
     },
   },

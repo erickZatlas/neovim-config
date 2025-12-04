@@ -42,6 +42,8 @@ Open Mason to manage installations:
 
 ## Keybindings
 
+For complete keybindings, see [Code Intelligence Guide](../tasks/code-intelligence.md).
+
 ### Navigation
 
 | Key | Action |
@@ -50,22 +52,24 @@ Open Mason to manage installations:
 | `gD` | Go to declaration |
 | `gr` | Go to references |
 | `gi` | Go to implementation |
-| `<leader>D` | Go to type definition |
+| `<leader>cd` | Go to type definition |
 
 ### Information
 
 | Key | Action |
 |-----|--------|
 | `K` | Hover documentation |
-| `<C-k>` | Signature help |
+| `Ctrl+k` | Signature help |
 
-### Actions
+### Code Actions
 
 | Key | Action |
 |-----|--------|
-| `<leader>rn` | Rename symbol |
 | `<leader>ca` | Code action |
-| `<leader>oi` | Organize imports |
+| `<leader>cr` | Rename symbol |
+| `<leader>co` | Organize imports |
+| `<leader>cf` | Format buffer |
+| `<leader>cl` | Lint buffer |
 
 ### Diagnostics
 
@@ -73,8 +77,8 @@ Open Mason to manage installations:
 |-----|--------|
 | `[d` | Previous diagnostic |
 | `]d` | Next diagnostic |
-| `<leader>d` | Show diagnostic float |
-| `<leader>q` | Set location list |
+| `<leader>xf` | Show diagnostic float |
+| `<leader>xl` | Set location list |
 
 ## Diagnostic Display
 
@@ -82,7 +86,7 @@ Diagnostics appear as:
 - **Virtual text** with `●` prefix
 - **Signs** in the gutter
 - **Underlines** under problematic code
-- **Float window** on `<leader>d`
+- **Float window** on `<leader>xf`
 
 ## Adding a New Language Server
 
@@ -184,6 +188,7 @@ See individual [language documentation](../languages/README.md) for more.
 
 ## Related
 
+- [Code Intelligence Guide](../tasks/code-intelligence.md) - Usage guide
 - [Completion](completion.md) - LSP-powered completion
 - [Languages](../languages/README.md) - Language-specific setup
-- [Debugging](debugging.md) - Debug adapter setup
+- [DAP Debugging](dap.md) - Debug adapter setup

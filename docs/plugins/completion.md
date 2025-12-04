@@ -164,5 +164,5 @@ Limit buffer source to current buffer:
 
 ## Related
 
+- [Editing Guide](../tasks/editing.md) - Usage guide
 - [LSP](lsp.md) - Language server setup
-- [Editor Utilities](editor.md) - Autopairs integration
