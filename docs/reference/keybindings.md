@@ -294,6 +294,16 @@ See [Debugging Guide](../tasks/debugging.md) for details.
 | `<leader>de` | Normal/Visual | Evaluate expression |
 | `<leader>dR` | Normal | Toggle REPL |
 
+## Markdown
+
+See [Markdown Preview](../plugins/markview.md) for details.
+
+| Key | Mode | Action |
+|-----|------|--------|
+| `<leader>tm` | Normal | Toggle markdown preview (buffer) |
+| `<leader>tM` | Normal | Toggle markdown preview (global) |
+| `<leader>ts` | Normal | Toggle markdown split preview |
+
 ## Leader Key Groups
 
 | Prefix | Category |
