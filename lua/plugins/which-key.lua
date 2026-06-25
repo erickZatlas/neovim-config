@@ -43,6 +43,7 @@ return {
         align = "center",
       },
       spec = {
+        { "<leader>a", group = "AI/Claude" },
         { "<leader>b", group = "Buffer" },
         { "<leader>c", group = "Code" },
         { "<leader>d", group = "Debug" },

@@ -43,6 +43,7 @@ Leader key: `<Space>`
 - **Git** - Hunk staging, blame, diff
 - **Telescope** - Fuzzy finding with ripgrep
 - **Format on Save** - Consistent code style
+- **AI Agents** - Claude Code and opencode embedded in the editor
 - **Tokyo Night** - Modern UI with statusline
 
 ## Documentation
@@ -71,6 +72,7 @@ Leader key: `<Space>`
 - [DAP Debugging](plugins/dap.md)
 - [Gitsigns](plugins/gitsigns.md)
 - [UI Enhancements](plugins/ui.md)
+- [AI Agents](plugins/ai-agents.md)
 
 ### Language Support
 

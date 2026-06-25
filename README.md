@@ -11,6 +11,7 @@ A modern Neovim configuration for multi-language development with support for Ko
 - **File Explorer** - Neo-tree sidebar
 - **Git Integration** - Gitsigns for hunks, blame, and diffs
 - **Linting & Formatting** - Language-specific linters and formatters with format-on-save
+- **AI Agents** - Claude Code and opencode embedded in the editor
 - **Theme** - Tokyo Night colorscheme
 
 ## Requirements
@@ -64,7 +65,9 @@ sudo apt install ripgrep
 │       ├── neo-tree.lua     # File explorer
 │       ├── lualine.lua      # Statusline
 │       ├── gitsigns.lua     # Git integration
-│       └── formatting.lua   # Linting & formatting
+│       ├── formatting.lua   # Linting & formatting
+│       ├── claudecode.lua   # Claude Code agent (coder/claudecode.nvim)
+│       └── opencode.lua     # opencode agent (NickvanDyke/opencode.nvim)
 ```
 
 ## Keybindings
@@ -156,6 +159,36 @@ Leader key: `<Space>`
 | `<C-b>` | Scroll docs up |
 | `<C-f>` | Scroll docs down |
 
+### AI Agents
+
+Two coding agents run inside the editor, on separate prefixes so they never collide.
+
+**Claude Code** (`<leader>a` — "AI"). Launching the panel spawns the `claude` CLI in a snacks terminal that connects to this Neovim instance as its IDE: it sees your selection, opens files, and shows edits as native diffs. Run `/ide` inside to confirm "Connected to Neovim".
+
+| Key | Action |
+|-----|--------|
+| `<leader>ac` | Toggle Claude panel |
+| `<leader>af` | Focus Claude panel |
+| `<leader>ar` | Resume a past session |
+| `<leader>aC` | Continue last session |
+| `<leader>am` | Select model |
+| `<leader>ab` | Add current buffer to context |
+| `<leader>as` | Send selection (visual) / add file from Neo-tree |
+| `<leader>aa` | Accept proposed diff |
+| `<leader>ad` | Deny proposed diff |
+
+**opencode** (`<leader>o`). Embedded agent TUI; model configured in `~/.config/opencode/opencode.jsonc`.
+
+| Key | Action |
+|-----|--------|
+| `<leader>oo` | Toggle opencode panel |
+| `<leader>oa` | Ask about cursor (normal) / selection (visual) |
+| `<leader>o+` | Append current buffer to prompt |
+| `<leader>os` | Pick a prompt |
+| `<leader>on` | New session |
+| `<leader>oi` | Interrupt |
+| `<leader>oe` | Explain selection (visual) |
+
 ## Plugins
 
 | Plugin | Purpose |
@@ -173,6 +206,9 @@ Leader key: `<Space>`
 | [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) | Git integration |
 | [conform.nvim](https://github.com/stevearc/conform.nvim) | Formatting |
 | [nvim-lint](https://github.com/mfussenegger/nvim-lint) | Linting |
+| [claudecode.nvim](https://github.com/coder/claudecode.nvim) | Claude Code agent integration |
+| [opencode.nvim](https://github.com/NickvanDyke/opencode.nvim) | opencode agent integration |
+| [snacks.nvim](https://github.com/folke/snacks.nvim) | UI toolkit (terminal/input/picker for the agents) |
 
 ## Language Support
 
@@ -211,3 +247,5 @@ All language servers, formatters, and linters are auto-installed via Mason.
 | `:ConformInfo` | Show formatter status |
 | `:Telescope` | Open Telescope |
 | `:Neotree` | Open file explorer |
+| `:ClaudeCode` | Toggle the Claude Code panel |
+| `:ClaudeCodeSelectModel` | Pick the Claude model |

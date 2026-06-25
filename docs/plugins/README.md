@@ -51,6 +51,14 @@ For usage guides, see [Task Guides](../tasks/README.md).
 | vim-illuminate | Highlight references | [tasks/navigation.md](../tasks/navigation.md) |
 | markview.nvim | Markdown preview | [markview.md](markview.md) |
 
+### AI Agents
+
+| Plugin | Purpose | Configuration |
+|--------|---------|---------------|
+| claudecode.nvim | Claude Code agent integration | [ai-agents.md](ai-agents.md) |
+| opencode.nvim | opencode agent integration | [ai-agents.md](ai-agents.md) |
+| snacks.nvim | Terminal/input/picker UI for the agents | [ai-agents.md](ai-agents.md) |
+
 ### UI
 
 | Plugin | Purpose | Configuration |
