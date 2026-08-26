@@ -18,7 +18,7 @@ require("lazy").setup({
     { import = "plugins" },
   },
   install = { colorscheme = { "tokyonight", "habamax" } },
-  checker = { enabled = true },
+  checker = { enabled = false },
 })
 
 -- Load keymaps after plugins
