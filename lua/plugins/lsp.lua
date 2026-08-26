@@ -15,6 +15,7 @@ return {
       ensure_installed = {
         -- Kotlin
         "ktlint",
+        "detekt",
         -- Python
         "black",
         "ruff",
@@ -41,6 +42,27 @@ return {
     config = function()
       local lspconfig = require("lspconfig")
       local cmp_nvim_lsp = require("cmp_nvim_lsp")
+
+      -- Configure jdtls to use Java 21 (required by jdtls, but project can use Java 17)
+      local jdtls_path = vim.fn.stdpath("data") .. "/mason/packages/jdtls"
+      local launcher_jar = vim.fn.glob(jdtls_path .. "/plugins/org.eclipse.equinox.launcher_*.jar")
+      vim.lsp.config("jdtls", {
+        cmd = {
+          "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
+          "-Declipse.application=org.eclipse.jdt.ls.core.id1",
+          "-Dosgi.bundles.defaultStartLevel=4",
+          "-Declipse.product=org.eclipse.jdt.ls.core.product",
+          "-Dlog.protocol=true",
+          "-Dlog.level=ALL",
+          "-Xmx1g",
+          "--add-modules=ALL-SYSTEM",
+          "--add-opens", "java.base/java.util=ALL-UNNAMED",
+          "--add-opens", "java.base/java.lang=ALL-UNNAMED",
+          "-jar", launcher_jar,
+          "-configuration", jdtls_path .. "/config_linux",
+          "-data", vim.fn.stdpath("cache") .. "/jdtls/" .. vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t"),
+        },
+      })
 
       -- Enhanced capabilities for nvim-cmp
       local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -96,11 +118,31 @@ return {
               },
             })
           end,
-          -- Java
+          -- Java (jdtls requires Java 21+ to run, but can work with Java 17 projects)
           ["jdtls"] = function()
+            local jdtls_path = vim.fn.stdpath("data") .. "/mason/packages/jdtls"
+            local launcher_jar = vim.fn.glob(jdtls_path .. "/plugins/org.eclipse.equinox.launcher_*.jar")
+            local config_dir = jdtls_path .. "/config_linux"
+            local workspace_dir = vim.fn.stdpath("cache") .. "/jdtls/" .. vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
+
             lspconfig.jdtls.setup({
               capabilities = capabilities,
               on_attach = on_attach,
+              cmd = {
+                "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
+                "-Declipse.application=org.eclipse.jdt.ls.core.id1",
+                "-Dosgi.bundles.defaultStartLevel=4",
+                "-Declipse.product=org.eclipse.jdt.ls.core.product",
+                "-Dlog.protocol=true",
+                "-Dlog.level=ALL",
+                "-Xmx1g",
+                "--add-modules=ALL-SYSTEM",
+                "--add-opens", "java.base/java.util=ALL-UNNAMED",
+                "--add-opens", "java.base/java.lang=ALL-UNNAMED",
+                "-jar", launcher_jar,
+                "-configuration", config_dir,
+                "-data", workspace_dir,
+              },
               root_dir = lspconfig.util.root_pattern(
                 "settings.gradle",
                 "settings.gradle.kts",

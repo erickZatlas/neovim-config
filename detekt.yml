@@ -1,0 +1,46 @@
+# Detekt configuration for unused code detection
+
+style:
+  UnusedPrivateMember:
+    active: true
+    allowedNames: "(_|ignored|expected|serialVersionUID)"
+  UnusedPrivateClass:
+    active: true
+  # Disable noisy style rules
+  MagicNumber:
+    active: false
+  WildcardImport:
+    active: false
+  MaxLineLength:
+    active: false
+  NewLineAtEndOfFile:
+    active: false
+  ReturnCount:
+    active: false
+
+complexity:
+  TooManyFunctions:
+    active: false
+  LongMethod:
+    active: false
+  LongParameterList:
+    active: false
+  ComplexCondition:
+    active: false
+  CyclomaticComplexMethod:
+    active: false
+  LargeClass:
+    active: false
+
+# Formatting rules (requires detekt-formatting plugin)
+formatting:
+  NoUnusedImports:
+    active: true
+  NoWildcardImports:
+    active: false
+  Indentation:
+    active: false
+  MaximumLineLength:
+    active: false
+  ParameterListWrapping:
+    active: false
