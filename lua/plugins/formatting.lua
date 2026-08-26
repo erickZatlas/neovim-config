@@ -51,8 +51,37 @@ return {
     config = function()
       local lint = require("lint")
 
+      -- Custom detekt linter for Kotlin (unused functions, imports, classes, etc.)
+      local detekt_config = vim.fn.stdpath("config") .. "/detekt.yml"
+      local detekt_plugins = vim.fn.expand("~/.local/share/detekt-plugins/detekt-formatting-1.23.8.jar")
+      lint.linters.detekt = {
+        cmd = vim.fn.stdpath("data") .. "/mason/bin/detekt",
+        stdin = false,
+        append_fname = true,
+        args = { "--config", detekt_config, "--plugins", detekt_plugins, "--input" },
+        stream = "both",
+        ignore_exitcode = true,
+        parser = function(output, bufnr)
+          local diagnostics = {}
+          for line in output:gmatch("[^\r\n]+") do
+            -- Format: path:line:col: message [RuleName]
+            local lnum, col, message = line:match(":(%d+):(%d+): (.+)$")
+            if lnum then
+              table.insert(diagnostics, {
+                lnum = tonumber(lnum) - 1,
+                col = tonumber(col) - 1,
+                message = message,
+                severity = vim.diagnostic.severity.WARN,
+                source = "detekt",
+              })
+            end
+          end
+          return diagnostics
+        end,
+      }
+
       lint.linters_by_ft = {
-        kotlin = { "ktlint" },
+        kotlin = { "detekt" },
         python = { "ruff" },
         javascript = { "eslint_d" },
         typescript = { "eslint_d" },
